@@ -8,7 +8,7 @@ export const fetchCountries = name => {
                  return response.json()
             }
             else {
-                throw new Error('response.status');
+                throw new Error(response.status);
             }
        })
     
