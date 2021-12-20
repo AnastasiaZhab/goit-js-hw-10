@@ -1,22 +1,18 @@
 export const fetchCountries = name => {
-    // name.preventDefault();
-
     
-    const url = 'https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages';
-    console.log(url);
+    const url = `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`;
     
-    fetch(url)
+    return fetch(url)
     .then(response => {
         return response.json()
     })
-    .then(console.log)
+    .catch(error => {
+                
+                Notiflix.Notify.info('Oops, there is no country with that name');
+                console.log(error);
+            })
     
 }
 
 
 
-
-
-
-// const searchQuery = name.currentTarget.elements.query.value;
-// https://restcountries.com/v2/all?fields=name,capital,currencies
