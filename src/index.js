@@ -58,11 +58,11 @@ function onInput(event) {
                 return;
             })
 
-            // .catch(error => {
+            .catch(error => {
                 
-            //     Notiflix.Notify.failure('Oops, there is no country with that name');
-            //     console.log(error);
-            // })
+                Notiflix.Notify.failure('Oops, there is no country with that name');
+                console.log(error);
+            })
     }
 
 }
